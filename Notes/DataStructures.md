@@ -66,3 +66,16 @@ Same as Linked List but each node holds 2 pointer nodes rather than 1 - previous
 ## Hash Map
 
 Based on key and value pairs. Hash map takes key, inputs it into hashing algorithm, then generates an index and stores the value at the generated index of an array. Each index has a linked list of elements for elements that create the same hash index.
+
+
+
+
+## Stack
+
+Simple LIFO collection (Last-in ~push~ first-out ~pop~). Can be implemented easily with LinkedList(add and remove from head) or array.
+
+
+
+## Queue
+
+Simple FIFO collection (First-in ~push~ first-out ~pop~). Can be implemented easily with LinkedList(add to tail, remove from head) or array.
