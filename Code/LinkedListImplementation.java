@@ -1,4 +1,3 @@
-//import LinkedListNodeImplementation;
 public class LinkedListImplementation<T> {
     LinkedListNodeImplementation head;
     int size;

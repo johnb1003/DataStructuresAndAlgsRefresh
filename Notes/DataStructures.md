@@ -79,3 +79,43 @@ Simple LIFO collection (Last-in ~push~ first-out ~pop~). Can be implemented easi
 ## Queue
 
 Simple FIFO collection (First-in ~push~ first-out ~pop~). Can be implemented easily with LinkedList(add to tail, remove from head) or array.
+Priority queue can be useful.
+
+
+
+
+
+# Collections
+
+## Underlying Implementaions in Java
+
+- ArrayList => Dynamic array
+
+- LinkedList => LinkedList
+
+- HashMap => HashTable
+
+- Set => HashTable
+
+- Stack => Dynamic array
+
+- Queue => Dynamic array
+
+- Priority queue => Dynamic array
+
+
+
+## ArrayList
+
+Good for searching and retrieving data, bad for updating and deleting.
+
+
+
+## LinkedList
+
+Good for inserting and deleting (to beginning or end). Bad for searching and retrieving.
+
+
+
+## HashMap
+
