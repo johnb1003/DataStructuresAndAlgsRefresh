@@ -117,5 +117,18 @@ Good for inserting and deleting (to beginning or end). Bad for searching and ret
 
 
 
-## HashMap
+## HashSet vs TreeSet
+
+Both are collections of unique elements. HashSet is unrdered, TreeSet is ordered.
+
+
+
+
+# Search Algorithms
+
+## Linear Search
+
+Looping through array in order (normal for loop). O(n).
+
+## 
 
