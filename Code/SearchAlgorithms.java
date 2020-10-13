@@ -60,12 +60,45 @@ public class SearchAlgorithms {
                 return steps;
             }
         }
-        return -1;
+        return 99999;
     }
 
-    public static int binarySearch(int[] data, int target) {
-        Arrays.sort(data);
-        return recursiveSort(data, target, 0);
+    public static int binarySearchIterative(int[] data, int target) {
+        int[] arr = Arrays.copyOf(data, data.length);
+        Arrays.sort(arr);
+        int steps = 0;
+        boolean found = false;
+
+        int mid=0, low=0, high=arr.length-1;
+
+        while(!found) {
+            if(low > high) {
+                return 99999;
+            }
+
+            mid = low + ((high-low)/2);
+            steps++;
+
+            if(arr[mid] == target) {
+                found = true;
+                return steps;
+            }
+            else if(arr[mid] > target) {
+                high = mid-1;
+                continue;
+            }
+            else if(arr[mid] < target) {
+                low = mid+1;
+                continue;
+            }
+        }
+        return steps;
+    }
+
+    public static int binarySearchRecursive(int[] data, int target) {
+        int[] arr = Arrays.copyOf(data, data.length);
+        Arrays.sort(arr);
+        return recursiveSort(arr, target, 0);
     }
 
     public static int recursiveSort(int[] data, int target, int steps) {
@@ -74,7 +107,7 @@ public class SearchAlgorithms {
                 return steps;
             }
             else {
-                return -1;
+                return 99999;
             }
         }
         else {
@@ -94,7 +127,8 @@ public class SearchAlgorithms {
 
     public static void runTests() {
         int linSteps=0;
-        int binSteps=0;
+        int binItSteps=0;
+        int binRecSteps=0;
         int target;
 
         for(int i=0; i<NUM_TESTS; i++) {
@@ -102,10 +136,12 @@ public class SearchAlgorithms {
             target = (int)(Math.floor(Math.random() * (MAX_CAPACITY)));
 
             linSteps += linearSearch(data, target);
-            binSteps += binarySearch(data, target);
+            binItSteps += binarySearchIterative(data, target);
+            binRecSteps += binarySearchRecursive(data, target);
         }
 
         System.out.println("Linear Search Average Steps: " + ((double)linSteps / NUM_TESTS));
-        System.out.println("Binary Search Average Steps: " + ((double)binSteps / NUM_TESTS));
+        System.out.println("Iterative Binary Search Average Steps: " + ((double)binItSteps / NUM_TESTS));
+        System.out.println("Recursive Binary Search Average Steps: " + ((double)binRecSteps / NUM_TESTS));
     }
 }
